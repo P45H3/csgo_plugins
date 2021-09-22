@@ -26,19 +26,19 @@ public void OnPluginStart(){
 	AddCommandListener(OnSWTeam, "jointeam");
 	
 	HookConVarChange(ee_exploitfixtype, OnFixTypeChanged); 
-    nType = GetConVarInt(ee_exploitfixtype);
+   	nType = GetConVarInt(ee_exploitfixtype);
 }
 
 public OnFixTypeChanged(Handle:convar, const String:oldValue[], const String:newValue[]) 
 { 
-    nType = GetConVarInt(convar);
+	nType = GetConVarInt(convar);
 }
  
 public void CheckCvar(QueryCookie cookie, int client, ConVarQueryResult result, const char[] cvarName, const char[] cvarValue, any value){
 	if(GetClientTeam(client) == 0)
 		return;
 	char clientname[MAX_NAME_LENGTH];
-    GetClientName(client, clientname, MAX_NAME_LENGTH);
+    	GetClientName(client, clientname, MAX_NAME_LENGTH);
 	
 	int val = StringToInt(cvarValue);
 	
